@@ -1,1 +1,2 @@
-# -GL-ProCamp-Python-Networking-for-Test-Automation
+GL-ProCamp
+Python Networking for Test Automation
