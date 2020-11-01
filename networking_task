@@ -1,0 +1,31 @@
+Task 2 Networking
+
+You have a computer with a home  WiFi  router connected to a provider - typical home network.
+When you enter URL www.google.com in the browser, your computer is sending a DNS request to convert the name into IP address. 
+
+Task: Describe what is happening with this DNS request.
+
+What does the OS perform first?
+What DNS server is queried first?
+In case the first server is not able to convert the name to IP address, what happens next? What DNS server is queried next?
+In case the next server is not able to convert the name to IP address, what happens next?
+What happens In case none of the servers is able to convert the name to IP address?
+
+
+ANSWER:
+
+By default, a name server queries ''iteratively'' (or non-recursively)
+
+The steps taken to resolve www.google.com to its IP address are following:
+
+- Local client asks the local name server for the IP address of www.google.com
+
+- Local name server does not know the IP address, so it asks a root name server for the IP address of www.google.com
+
+- Root name server does not know the IP address, but it does know the IP address of the name server for .com so it tells it to the local name server.
+
+- Local name server asks .com's name server for the IP address of www.google.com
+
+- .com's name server does not know the IP address of www.google.com, and does not know the IP address of the name server which is authoritative for its zone.
+
+- Local name server returns error code DNS_PROBE_FINISHED_NXDOMAIN
